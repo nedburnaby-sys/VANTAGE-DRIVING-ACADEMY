@@ -444,6 +444,129 @@
       font-weight:700;
     }
 
+
+    /* BOOKING ACTIONS */
+    .booking-actions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+
+    .btn-sms{
+      border:1px solid var(--navy);
+      color:var(--navy);
+      background:#fff;
+    }
+
+    .btn-sms:hover{
+      background:var(--navy);
+      color:#fff;
+    }
+
+    .hero .btn-sms,
+    .banner .btn-sms,
+    .contact .btn-sms{
+      border-color:rgba(255,255,255,.65);
+      color:#fff;
+      background:rgba(255,255,255,.08);
+    }
+
+    .hero .btn-sms:hover,
+    .banner .btn-sms:hover,
+    .contact .btn-sms:hover{
+      background:#fff;
+      color:var(--navy);
+    }
+
+    .price-card .booking-actions{
+      margin-top:8px;
+    }
+
+    .price-card .booking-actions .btn{
+      flex:1 1 145px;
+      padding-left:14px;
+      padding-right:14px;
+    }
+
+    /* AWARD */
+    .award-section{
+      background:linear-gradient(180deg,#f7faf8 0%,#ffffff 100%);
+      padding:76px 0;
+    }
+
+    .award-card{
+      display:grid;
+      grid-template-columns:minmax(190px,300px) 1fr;
+      gap:42px;
+      align-items:center;
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:28px;
+      padding:38px;
+      box-shadow:var(--shadow);
+    }
+
+    .award-image-link{
+      display:block;
+      border-radius:22px;
+      overflow:hidden;
+      background:#f5f5f5;
+      transition:.2s ease;
+    }
+
+    .award-image-link:hover{
+      transform:translateY(-3px);
+    }
+
+    .award-image-link img{
+      width:100%;
+      aspect-ratio:1/1;
+      object-fit:cover;
+    }
+
+    .award-copy .section-kicker{
+      color:#9a6b00;
+    }
+
+    .award-copy h2{
+      margin-bottom:14px;
+    }
+
+    .award-copy p{
+      color:var(--muted);
+      margin:0 0 20px;
+      font-size:1.04rem;
+    }
+
+    .award-meta{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin:0 0 22px;
+    }
+
+    .award-meta span{
+      background:#eef8f1;
+      border:1px solid #d9efe0;
+      color:#155b2d;
+      padding:8px 12px;
+      border-radius:999px;
+      font-weight:800;
+      font-size:.88rem;
+    }
+
+    .review-detail{
+      display:block;
+      margin-top:9px;
+      color:var(--muted);
+      font-style:normal;
+    }
+
+    .mobile-booking-bar{
+      display:none;
+    }
+
     /* REVIEWS */
     .reviews{
       background:#fff;
@@ -607,21 +730,50 @@
       .photo{min-height:320px}
       footer{padding-bottom:96px}
 
-      .mobile-call{
-        display:flex;
+      .mobile-booking-bar{
+        display:grid;
+        grid-template-columns:1fr 1fr;
+        gap:10px;
         position:fixed;
         left:14px;
         right:14px;
         bottom:14px;
         z-index:90;
-        background:var(--accent);
-        color:#13223a;
-        min-height:56px;
-        border-radius:14px;
+        padding:8px;
+        border-radius:16px;
+        background:rgba(7,20,38,.94);
+        box-shadow:0 12px 28px rgba(0,0,0,.24);
+        backdrop-filter:blur(10px);
+      }
+
+      .mobile-booking-bar a{
+        min-height:50px;
+        display:flex;
         align-items:center;
         justify-content:center;
+        border-radius:11px;
         font-weight:900;
-        box-shadow:0 12px 28px rgba(0,0,0,.22);
+      }
+
+      .mobile-booking-bar .mobile-call-btn{
+        background:var(--accent);
+        color:#13223a;
+      }
+
+      .mobile-booking-bar .mobile-sms-btn{
+        background:#fff;
+        color:var(--navy);
+      }
+
+      .award-card{
+        grid-template-columns:1fr;
+        padding:26px;
+        gap:28px;
+      }
+
+      .award-image-link{
+        max-width:270px;
+        margin:auto;
       }
     }
   </style>
@@ -640,9 +792,10 @@
           <a href="#lessons">Lessons</a>
           <a href="#pricing">Pricing</a>
           <a href="#why">Why Vantage</a>
+          <a href="#award">Award</a>
           <a href="#reviews">Reviews</a>
           <a href="#contact">Contact</a>
-          <a class="nav-cta" href="tel:+17789290062">Call to Book</a>
+          <a class="nav-cta" href="#pricing">Book Now</a>
         </div>
       </nav>
     </div>
@@ -660,7 +813,8 @@
           </p>
 
           <div class="hero-actions">
-            <a class="btn btn-primary" href="tel:+17789290062">☎ Book a Lesson</a>
+            <a class="btn btn-primary" href="tel:+17789290062">☎ Call to Book</a>
+            <a class="btn btn-secondary" href="sms:+17789290062">💬 Send SMS</a>
             <a class="btn btn-secondary" href="#lessons">View Lessons</a>
           </div>
 
@@ -728,35 +882,50 @@
             <h3>60-Minute Driving Lesson</h3>
             <div class="price">$70 <span class="gst">+ 5% GST</span></div>
             <p>One-on-one 60-minute driving lesson.</p>
-            <a class="btn btn-primary" href="tel:+17789290062">Book Now</a>
+            <div class="booking-actions">
+              <a class="btn btn-primary" href="tel:+17789290062">☎ Call</a>
+              <a class="btn btn-sms" href="sms:+17789290062">💬 SMS</a>
+            </div>
           </article>
 
           <article class="price-card">
             <h3>90-Minute Driving Lesson</h3>
             <div class="price">$95 <span class="gst">+ 5% GST</span></div>
             <p>Extended 90-minute lesson for additional practice.</p>
-            <a class="btn btn-primary" href="tel:+17789290062">Book Now</a>
+            <div class="booking-actions">
+              <a class="btn btn-primary" href="tel:+17789290062">☎ Call</a>
+              <a class="btn btn-sms" href="sms:+17789290062">💬 SMS</a>
+            </div>
           </article>
 
           <article class="price-card">
             <h3>Road Test Vehicle Rental</h3>
             <div class="price">$120 <span class="gst">+ 5% GST</span></div>
             <p>Car rental for an ICBC Class 5 or Class 7 road test.</p>
-            <a class="btn btn-primary" href="tel:+17789290062">Book Now</a>
+            <div class="booking-actions">
+              <a class="btn btn-primary" href="tel:+17789290062">☎ Call</a>
+              <a class="btn btn-sms" href="sms:+17789290062">💬 SMS</a>
+            </div>
           </article>
 
           <article class="price-card">
             <h3>Road Test Rental + 45-Minute Warm-Up</h3>
             <div class="price">$160 <span class="gst">+ 5% GST</span></div>
             <p>Includes a 45-minute warm-up drive before the road test and vehicle rental for the test.</p>
-            <a class="btn btn-primary" href="tel:+17789290062">Book Now</a>
+            <div class="booking-actions">
+              <a class="btn btn-primary" href="tel:+17789290062">☎ Call</a>
+              <a class="btn btn-sms" href="sms:+17789290062">💬 SMS</a>
+            </div>
           </article>
 
           <article class="price-card">
             <h3>5-Hour Driving Lesson Package</h3>
             <div class="price">$325 <span class="gst">+ 5% GST</span></div>
             <p>Five hours of professional driving instruction.</p>
-            <a class="btn btn-primary" href="tel:+17789290062">Book Now</a>
+            <div class="booking-actions">
+              <a class="btn btn-primary" href="tel:+17789290062">☎ Call</a>
+              <a class="btn btn-sms" href="sms:+17789290062">💬 SMS</a>
+            </div>
           </article>
 
           <article class="price-card featured">
@@ -768,21 +937,30 @@
               <li>Warm-up driving period prior to the road test</li>
               <li>Vehicle rental for the road test</li>
             </ul>
-            <a class="btn btn-primary" href="tel:+17789290062">Book Now</a>
+            <div class="booking-actions">
+              <a class="btn btn-primary" href="tel:+17789290062">☎ Call</a>
+              <a class="btn btn-sms" href="sms:+17789290062">💬 SMS</a>
+            </div>
           </article>
 
           <article class="price-card">
             <h3>“N” Drivers — 10 Hours</h3>
             <div class="price">$650 <span class="gst">+ 5% GST</span></div>
             <p>For drivers who have completed the ICBC Class 7 Road Test and obtained their “N” licence.</p>
-            <a class="btn btn-primary" href="tel:+17789290062">Book Now</a>
+            <div class="booking-actions">
+              <a class="btn btn-primary" href="tel:+17789290062">☎ Call</a>
+              <a class="btn btn-sms" href="sms:+17789290062">💬 SMS</a>
+            </div>
           </article>
 
           <article class="price-card">
             <h3>New Behind the Wheel — 20 Hours</h3>
             <div class="price">$1,300 <span class="gst">+ 5% GST</span></div>
             <p>For new drivers who have passed the ICBC knowledge test and have little to no driving experience.</p>
-            <a class="btn btn-primary" href="tel:+17789290062">Book Now</a>
+            <div class="booking-actions">
+              <a class="btn btn-primary" href="tel:+17789290062">☎ Call</a>
+              <a class="btn btn-sms" href="sms:+17789290062">💬 SMS</a>
+            </div>
           </article>
         </div>
 
@@ -830,9 +1008,51 @@
               <div class="check-badge">✓</div>
               <div>
                 <strong>Simple booking</strong>
-                <span>Call directly to ask questions and arrange your lesson.</span>
+                <span>Call or send an SMS directly to ask questions and arrange your lesson.</span>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="award-section" id="award">
+      <div class="container">
+        <div class="award-card">
+          <a
+            class="award-image-link"
+            href="https://www.qualitybusinessawards.ca/2024/the-best-driving-school-in-langley/vantage-driving-academy/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="View Vantage Driving Academy's 2024 Quality Business Award"
+          >
+            <img
+              src="https://www.qualitybusinessawards.ca/images/Design-2024.jpg"
+              alt="2024 Quality Business Awards winner badge"
+              loading="lazy"
+            />
+          </a>
+
+          <div class="award-copy">
+            <div class="section-kicker">Award Winning Driving School</div>
+            <h2>Best Driving School in Langley — 2024</h2>
+            <p>
+              Vantage Driving Academy was recognized by Quality Business Awards as
+              <strong>The Best Driving School in Langley, British Columbia</strong> for 2024.
+              Tap the award badge to view the official award page.
+            </p>
+            <div class="award-meta">
+              <span>🏆 2024 Winner</span>
+              <span>✓ 95%+ Quality Score</span>
+              <span>🇨🇦 Top 1% Recognition</span>
+            </div>
+            <a
+              class="btn btn-primary"
+              href="https://www.qualitybusinessawards.ca/2024/the-best-driving-school-in-langley/vantage-driving-academy/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >View Official Award</a>
           </div>
         </div>
       </div>
@@ -856,23 +1076,37 @@
         <div class="review-grid">
           <article class="review-card">
             <div class="stars">★★★★★</div>
-            <blockquote>“He taught me everything there was to know on the test.”</blockquote>
-            <strong>Colton Black</strong>
-            <small>Google Review</small>
-          </article>
-
-          <article class="review-card">
-            <div class="stars">★★★★★</div>
-            <blockquote>“Patient, punctual and encouraging.”</blockquote>
+            <blockquote>
+              “Patient, punctual and encouraging.”
+              <span class="review-detail">
+                The review also praised practical tips for real-life driving and the confidence gained behind the wheel.
+              </span>
+            </blockquote>
             <strong>Natasha Korchanova</strong>
-            <small>Google Review</small>
+            <small>Google Review • review highlight</small>
           </article>
 
           <article class="review-card">
             <div class="stars">★★★★★</div>
-            <blockquote>“Passed my N test first try!”</blockquote>
+            <blockquote>
+              “Passed my N test first try!”
+              <span class="review-detail">
+                The review highlighted clear, simple explanations of why important driving tasks are done a certain way on the road.
+              </span>
+            </blockquote>
             <strong>Kayah Rassak</strong>
-            <small>Google Review</small>
+            <small>Google Review • review highlight</small>
+          </article>
+
+          <article class="review-card">
+            <div class="stars">★★★★★</div>
+            <blockquote>
+              <span class="review-detail" style="margin-top:0;color:var(--ink)">
+                Austin praised the safe-driving techniques taught during the lessons and said the preparation helped with a first-try Class 7 (N) road-test pass.
+              </span>
+            </blockquote>
+            <strong>Austin</strong>
+            <small>Google Review • summarized</small>
           </article>
         </div>
 
@@ -891,7 +1125,10 @@
             <p>Call Vantage Drive Solutions Ltd to book your next lesson in Langley.</p>
           </div>
 
-          <a class="btn btn-primary" href="tel:+17789290062">☎ 778-929-0062</a>
+          <div class="booking-actions">
+            <a class="btn btn-primary" href="tel:+17789290062">☎ 778-929-0062</a>
+            <a class="btn btn-sms" href="sms:+17789290062">💬 Send SMS</a>
+          </div>
         </div>
       </div>
     </section>
@@ -905,7 +1142,10 @@
             Questions about lessons or road-test preparation? Call or email Vantage Drive Solutions Ltd
             and we can discuss what type of lesson is right for you.
           </p>
-          <a class="btn btn-primary" href="tel:+17789290062">Call 778-929-0062</a>
+          <div class="booking-actions">
+            <a class="btn btn-primary" href="tel:+17789290062">☎ Call 778-929-0062</a>
+            <a class="btn btn-sms" href="sms:+17789290062">💬 Send SMS</a>
+          </div>
         </div>
 
         <div class="contact-card">
@@ -937,6 +1177,9 @@
     </div>
   </footer>
 
-  <a class="mobile-call" href="tel:+17789290062">☎ Call to Book • 778-929-0062</a>
+  <div class="mobile-booking-bar" aria-label="Mobile booking options">
+    <a class="mobile-call-btn" href="tel:+17789290062">☎ Call</a>
+    <a class="mobile-sms-btn" href="sms:+17789290062">💬 SMS</a>
+  </div>
 </body>
 </html>
