@@ -407,6 +407,87 @@
       font-weight:700;
     }
 
+    /* REVIEWS */
+    .reviews{
+      background:#fff;
+    }
+
+    .reviews-summary{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      flex-wrap:wrap;
+      margin:18px 0 30px;
+    }
+
+    .google-rating{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      background:#f7f9fc;
+      border:1px solid var(--line);
+      border-radius:999px;
+      padding:10px 16px;
+      font-weight:850;
+      color:var(--navy);
+    }
+
+    .stars{
+      color:#f4b400;
+      letter-spacing:1px;
+      font-size:1.05rem;
+    }
+
+    .review-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:22px;
+    }
+
+    .review-card{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:27px;
+      box-shadow:0 8px 25px rgba(11,31,58,.06);
+    }
+
+    .review-card .stars{
+      margin-bottom:14px;
+    }
+
+    .review-card blockquote{
+      margin:0 0 18px;
+      color:var(--ink);
+      font-size:1.03rem;
+      line-height:1.7;
+    }
+
+    .review-card strong{
+      display:block;
+      color:var(--navy);
+    }
+
+    .review-card small{
+      color:var(--muted);
+      font-weight:700;
+    }
+
+    .reviews-action{
+      margin-top:28px;
+    }
+
+    .reviews-action .btn-secondary-dark{
+      border:1px solid var(--navy);
+      color:var(--navy);
+      background:#fff;
+    }
+
+    .reviews-action .btn-secondary-dark:hover{
+      background:var(--navy);
+      color:#fff;
+    }
+
     .contact{
       background:var(--navy);
       color:#fff;
@@ -469,7 +550,7 @@
     @media (max-width:900px){
       .nav-links a:not(.nav-cta){display:none}
       .cards{grid-template-columns:1fr}
-      .split,.contact-grid,.pricing-grid{grid-template-columns:1fr}
+      .split,.contact-grid,.pricing-grid,.review-grid{grid-template-columns:1fr}
       .photo{min-height:380px}
       .banner{padding:38px;display:block}
       .banner .btn{margin-top:22px}
@@ -522,6 +603,7 @@
           <a href="#lessons">Lessons</a>
           <a href="#pricing">Pricing</a>
           <a href="#why">Why Vantage</a>
+          <a href="#reviews">Reviews</a>
           <a href="#contact">Contact</a>
           <a class="nav-cta" href="tel:+17789290062">Call to Book</a>
         </div>
@@ -719,6 +801,50 @@
       </div>
     </section>
 
+    <section class="reviews" id="reviews">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-kicker">Google Reviews</div>
+          <h2>What People Think About Us</h2>
+          <p>Real feedback from students who trained with Vantage.</p>
+        </div>
+
+        <div class="reviews-summary">
+          <div class="google-rating">
+            <span class="stars">★★★★★</span>
+            <span>5.0 • 170+ Google reviews</span>
+          </div>
+        </div>
+
+        <div class="review-grid">
+          <article class="review-card">
+            <div class="stars">★★★★★</div>
+            <blockquote>“He taught me everything there was to know on the test.”</blockquote>
+            <strong>Colton Black</strong>
+            <small>Google Review</small>
+          </article>
+
+          <article class="review-card">
+            <div class="stars">★★★★★</div>
+            <blockquote>“Patient, punctual and encouraging.”</blockquote>
+            <strong>Natasha Korchanova</strong>
+            <small>Google Review</small>
+          </article>
+
+          <article class="review-card">
+            <div class="stars">★★★★★</div>
+            <blockquote>“Passed my N test first try!”</blockquote>
+            <strong>Kayah Rassak</strong>
+            <small>Google Review</small>
+          </article>
+        </div>
+
+        <div class="reviews-action">
+          <a class="btn btn-secondary-dark" href="https://www.google.com/maps/search/?api=1&query=Vantage%20Drive%20Solutions%20LTD&query_place_id=ChIJIXXqrJfRhVQRURthwa_Wrjo" target="_blank" rel="noopener noreferrer">Read All Google Reviews</a>
+        </div>
+      </div>
+    </section>
+
     <section class="banner-wrap">
       <div class="container">
         <div class="banner">
@@ -739,7 +865,7 @@
           <div class="section-kicker" style="color:var(--gold)">Contact</div>
           <h2>Book your driving lesson.</h2>
           <p>
-            Questions about lessons or road-test preparation? Call Vantage Drive Solutions Ltd
+            Questions about lessons or road-test preparation? Call or email Vantage Drive Solutions Ltd
             and we can discuss what type of lesson is right for you.
           </p>
           <a class="btn btn-primary" href="tel:+17789290062">Call 778-929-0062</a>
@@ -749,6 +875,10 @@
           <div>
             <small>Phone</small>
             <strong><a href="tel:+17789290062">778-929-0062</a></strong>
+          </div>
+          <div>
+            <small>Email</small>
+            <strong><a href="mailto:vantagedriving@gmail.com">vantagedriving@gmail.com</a></strong>
           </div>
           <div>
             <small>Service Area</small>
@@ -766,7 +896,7 @@
   <footer>
     <div class="container footer-row">
       <span>© 2026 Vantage Drive Solutions Ltd. All rights reserved.</span>
-      <span>Professional Driving Lessons • Langley, BC</span>
+      <span><a href="mailto:vantagedriving@gmail.com">vantagedriving@gmail.com</a> • Langley, BC</span>
     </div>
   </footer>
 
