@@ -3,486 +3,451 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Vantage Driving Academy in Langley, BC. Professional Class 5 and Class 7 driving lessons, road test preparation, refresher lessons, and confidence-building instruction." />
-  <meta name="theme-color" content="#0b1f3a" />
-  <title>Vantage Driving Academy | Driving Lessons in Langley, BC</title>
+  <meta name="description" content="Vantage Driving Academy offers professional Class 5 and Class 7 driving lessons in Langley, BC." />
+  <title>Vantage Driving Academy | Langley, BC</title>
 
   <style>
     :root{
       --navy:#0b1f3a;
-      --navy-2:#102c52;
-      --blue:#1e66d0;
-      --sky:#eef5ff;
-      --orange:#f59e0b;
-      --text:#172033;
-      --muted:#5e6b7a;
+      --navy-2:#122d50;
+      --gold:#f6c445;
       --white:#ffffff;
-      --border:#dfe7f1;
-      --shadow:0 18px 50px rgba(11,31,58,.13);
-      --radius:22px;
-      --max:1160px;
+      --ink:#172033;
+      --muted:#667085;
+      --light:#f6f8fb;
+      --line:#e6eaf0;
+      --shadow:0 18px 45px rgba(11,31,58,.12);
+      --radius:20px;
     }
 
-    *{box-sizing:border-box;margin:0;padding:0}
+    *{box-sizing:border-box}
     html{scroll-behavior:smooth}
     body{
-      font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-      color:var(--text);
+      margin:0;
+      font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      color:var(--ink);
       background:#fff;
       line-height:1.6;
     }
+
     a{text-decoration:none;color:inherit}
-    button,a{transition:.2s ease}
     img{max-width:100%;display:block}
-    .container{width:min(var(--max),calc(100% - 36px));margin:auto}
+
+    .container{
+      width:min(1120px,calc(100% - 40px));
+      margin:auto;
+    }
 
     /* NAV */
-    .topbar{
-      background:var(--navy);
-      color:#dbe8f8;
-      font-size:.92rem;
-    }
-    .topbar .container{
-      min-height:40px;
-      display:flex;
-      justify-content:space-between;
-      gap:18px;
-      align-items:center;
-      flex-wrap:wrap;
-      padding:8px 0;
-    }
-    .topbar a:hover{color:#fff}
     header{
-      position:sticky;
+      position:fixed;
       top:0;
-      z-index:1000;
-      background:rgba(255,255,255,.95);
-      backdrop-filter:blur(12px);
-      border-bottom:1px solid rgba(223,231,241,.9);
+      left:0;
+      right:0;
+      z-index:50;
+      background:rgba(11,31,58,.93);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid rgba(255,255,255,.08);
     }
+
     nav{
-      min-height:74px;
+      height:74px;
       display:flex;
       align-items:center;
       justify-content:space-between;
       gap:24px;
     }
+
     .brand{
-      display:flex;
-      align-items:center;
-      gap:12px;
-      font-weight:900;
-      color:var(--navy);
-      letter-spacing:-.02em;
-    }
-    .logo{
-      width:44px;height:44px;border-radius:14px;
-      background:linear-gradient(135deg,var(--blue),var(--navy));
       color:#fff;
-      display:grid;place-items:center;
-      box-shadow:0 8px 20px rgba(30,102,208,.25);
-      font-size:1.05rem;
-      font-weight:900;
+      font-weight:800;
+      letter-spacing:.2px;
+      line-height:1.1;
     }
+
     .brand small{
       display:block;
-      color:var(--muted);
-      font-size:.73rem;
+      color:var(--gold);
+      font-size:.72rem;
       font-weight:700;
-      letter-spacing:.08em;
+      margin-top:5px;
+      letter-spacing:.9px;
       text-transform:uppercase;
     }
-    .nav-links{display:flex;align-items:center;gap:24px;font-weight:700;font-size:.96rem}
-    .nav-links a:hover{color:var(--blue)}
-    .nav-cta{
-      background:var(--orange);
-      color:#221600 !important;
-      padding:11px 16px;
-      border-radius:999px;
-      box-shadow:0 8px 18px rgba(245,158,11,.24);
+
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:28px;
+      color:#fff;
+      font-weight:600;
+      font-size:.95rem;
     }
-    .menu-btn{
-      display:none;
-      border:0;
-      background:var(--sky);
-      color:var(--navy);
-      width:44px;height:44px;border-radius:12px;
-      font-size:1.4rem;
-      cursor:pointer;
+
+    .nav-links a:hover{color:var(--gold)}
+
+    .nav-cta{
+      background:var(--gold);
+      color:#15233a !important;
+      padding:11px 17px;
+      border-radius:999px;
+      font-weight:800;
     }
 
     /* HERO */
     .hero{
-      overflow:hidden;
-      position:relative;
-      background:
-        radial-gradient(circle at 80% 20%,rgba(30,102,208,.30),transparent 30%),
-        radial-gradient(circle at 70% 80%,rgba(245,158,11,.18),transparent 26%),
-        linear-gradient(135deg,#07172b 0%,#0d2c52 54%,#114578 100%);
-      color:white;
-    }
-    .hero::after{
-      content:"";
-      position:absolute;
-      inset:auto -10% -110px -10%;
-      height:180px;
-      background:white;
-      border-radius:50% 50% 0 0;
-      opacity:.06;
-    }
-    .hero-grid{
-      min-height:650px;
-      display:grid;
-      grid-template-columns:1.15fr .85fr;
-      gap:54px;
+      min-height:760px;
+      display:flex;
       align-items:center;
-      padding:76px 0;
-      position:relative;
-      z-index:2;
+      color:#fff;
+      padding-top:74px;
+      background:
+        linear-gradient(90deg,rgba(6,20,40,.88) 0%,rgba(6,20,40,.72) 46%,rgba(6,20,40,.24) 100%),
+        url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1800&q=85') center/cover no-repeat;
     }
+
+    .hero-content{
+      max-width:690px;
+      padding:90px 0;
+    }
+
     .eyebrow{
       display:inline-flex;
-      gap:8px;
       align-items:center;
-      border:1px solid rgba(255,255,255,.2);
-      background:rgba(255,255,255,.08);
-      color:#e9f3ff;
-      padding:7px 12px;
+      gap:8px;
+      padding:8px 13px;
+      background:rgba(255,255,255,.12);
+      border:1px solid rgba(255,255,255,.22);
       border-radius:999px;
-      font-weight:800;
-      font-size:.84rem;
-      text-transform:uppercase;
-      letter-spacing:.08em;
-      margin-bottom:20px;
+      font-size:.88rem;
+      font-weight:700;
+      margin-bottom:22px;
     }
+
     h1{
-      font-size:clamp(2.7rem,6vw,5.1rem);
-      line-height:.98;
-      letter-spacing:-.055em;
-      max-width:820px;
+      font-size:clamp(2.8rem,6vw,5.3rem);
+      line-height:1.02;
+      letter-spacing:-2.7px;
+      margin:0 0 22px;
     }
+
     .hero p{
-      max-width:670px;
-      color:#d9e6f5;
-      font-size:1.16rem;
-      margin:24px 0 28px;
+      font-size:1.18rem;
+      max-width:640px;
+      color:#e9eef5;
+      margin:0 0 32px;
     }
+
     .hero-actions{
       display:flex;
+      gap:14px;
       flex-wrap:wrap;
-      gap:12px;
-      margin-bottom:28px;
     }
+
     .btn{
       display:inline-flex;
       align-items:center;
       justify-content:center;
-      gap:8px;
-      padding:14px 20px;
-      border-radius:999px;
-      font-weight:900;
-      border:1px solid transparent;
-      cursor:pointer;
+      gap:9px;
+      min-height:52px;
+      padding:0 23px;
+      border-radius:12px;
+      font-weight:800;
+      transition:.2s ease;
     }
-    .btn-primary{background:var(--orange);color:#241700;box-shadow:0 12px 30px rgba(245,158,11,.25)}
+
+    .btn-primary{
+      background:var(--gold);
+      color:#142137;
+    }
+
     .btn-primary:hover{transform:translateY(-2px)}
-    .btn-light{border-color:rgba(255,255,255,.28);background:rgba(255,255,255,.08);color:#fff}
-    .btn-light:hover{background:rgba(255,255,255,.14)}
+
+    .btn-secondary{
+      border:1px solid rgba(255,255,255,.4);
+      color:#fff;
+      background:rgba(255,255,255,.08);
+    }
+
     .hero-points{
       display:flex;
+      gap:20px;
       flex-wrap:wrap;
-      gap:15px 22px;
-      color:#e5eef8;
-      font-weight:700;
-      font-size:.94rem;
+      margin-top:30px;
+      color:#f2f5f8;
+      font-size:.95rem;
+      font-weight:650;
     }
-    .hero-points span::before{content:"✓";color:#ffd36a;margin-right:7px}
-    .hero-card{
-      background:#fff;
-      color:var(--text);
-      border-radius:30px;
-      padding:30px;
-      box-shadow:0 30px 80px rgba(0,0,0,.24);
-      position:relative;
-    }
-    .hero-card::before{
-      content:"";
-      position:absolute;
-      width:110px;height:110px;border-radius:50%;
-      background:rgba(30,102,208,.10);
-      right:-20px;top:-20px;
-    }
-    .road-icon{
-      width:66px;height:66px;
-      border-radius:20px;
-      background:var(--sky);
-      color:var(--blue);
-      display:grid;place-items:center;
-      font-size:2rem;
-      margin-bottom:18px;
-    }
-    .hero-card h2{font-size:1.65rem;line-height:1.15;color:var(--navy);margin-bottom:8px}
-    .hero-card p{color:var(--muted);font-size:.98rem;margin:0 0 20px}
-    .quick-row{
-      display:flex;justify-content:space-between;gap:12px;
-      padding:14px 0;border-top:1px solid var(--border);
-    }
-    .quick-row strong{color:var(--navy)}
-    .quick-row span{text-align:right;color:var(--muted)}
-    .quick-call{margin-top:18px;width:100%;background:var(--blue);color:#fff;border-radius:14px}
 
-    /* GENERAL */
+    /* SECTIONS */
     section{padding:88px 0}
-    .section-head{text-align:center;max-width:760px;margin:0 auto 42px}
-    .kicker{color:var(--blue);font-size:.83rem;letter-spacing:.12em;font-weight:900;text-transform:uppercase;margin-bottom:10px}
-    h2.section-title{font-size:clamp(2rem,4vw,3.2rem);line-height:1.05;letter-spacing:-.035em;color:var(--navy)}
-    .section-head p{color:var(--muted);margin-top:16px;font-size:1.06rem}
 
-    /* SERVICES */
-    .services{background:#f7faff}
-    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .section-head{
+      max-width:700px;
+      margin-bottom:38px;
+    }
+
+    .section-kicker{
+      color:#9a6b00;
+      text-transform:uppercase;
+      letter-spacing:1.3px;
+      font-size:.8rem;
+      font-weight:900;
+      margin-bottom:10px;
+    }
+
+    h2{
+      font-size:clamp(2rem,4vw,3.15rem);
+      line-height:1.1;
+      letter-spacing:-1.5px;
+      margin:0 0 14px;
+      color:var(--navy);
+    }
+
+    .section-head p{
+      color:var(--muted);
+      font-size:1.05rem;
+      margin:0;
+    }
+
+    /* SERVICE CARDS */
+    .services{
+      background:var(--light);
+    }
+
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:22px;
+    }
+
     .card{
       background:#fff;
-      border:1px solid var(--border);
+      border:1px solid var(--line);
       border-radius:var(--radius);
-      padding:28px;
-      box-shadow:0 10px 30px rgba(13,44,82,.05);
+      padding:30px;
+      box-shadow:0 8px 25px rgba(11,31,58,.05);
+      transition:.2s ease;
     }
-    .card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
-    .card-icon{
-      width:52px;height:52px;border-radius:15px;
-      background:var(--sky);display:grid;place-items:center;
-      font-size:1.45rem;margin-bottom:18px;
-    }
-    .card h3{font-size:1.22rem;color:var(--navy);margin-bottom:8px}
-    .card p{color:var(--muted);font-size:.96rem}
-    .card a{display:inline-block;margin-top:16px;color:var(--blue);font-weight:900}
 
-    /* WHY */
-    .split{display:grid;grid-template-columns:1fr 1fr;gap:58px;align-items:center}
-    .feature-panel{
-      min-height:440px;
-      border-radius:30px;
-      padding:36px;
-      background:
-        linear-gradient(140deg,rgba(11,31,58,.96),rgba(30,102,208,.90)),
-        linear-gradient(#0b1f3a,#0b1f3a);
-      color:#fff;
+    .card:hover{
+      transform:translateY(-5px);
       box-shadow:var(--shadow);
-      display:flex;
-      flex-direction:column;
-      justify-content:flex-end;
-      position:relative;
-      overflow:hidden;
     }
-    .feature-panel::before{
-      content:"";
-      width:260px;height:260px;border:2px dashed rgba(255,255,255,.18);
-      border-radius:50%;position:absolute;top:-75px;right:-60px;
-    }
-    .feature-panel .big{font-size:4rem;line-height:1;margin-bottom:18px}
-    .feature-panel h3{font-size:2rem;line-height:1.05;margin-bottom:12px}
-    .feature-panel p{color:#d7e7f8}
-    .checklist{display:grid;gap:18px;margin-top:26px}
-    .check{
-      display:grid;grid-template-columns:42px 1fr;gap:14px;align-items:start;
-    }
-    .check b{
-      width:42px;height:42px;border-radius:12px;
-      background:var(--sky);color:var(--blue);display:grid;place-items:center;
-    }
-    .check h3{font-size:1.04rem;color:var(--navy);margin-bottom:3px}
-    .check p{color:var(--muted);font-size:.94rem}
 
-    /* PROCESS */
-    .process{background:var(--navy);color:#fff}
-    .process .section-title{color:#fff}
-    .process .section-head p{color:#c8d8eb}
-    .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-    .step{
-      border:1px solid rgba(255,255,255,.12);
-      border-radius:22px;
-      padding:28px;
-      background:rgba(255,255,255,.055);
+    .icon{
+      width:50px;
+      height:50px;
+      border-radius:14px;
+      display:grid;
+      place-items:center;
+      background:#fff6d7;
+      color:#7a5600;
+      font-size:1.5rem;
+      margin-bottom:18px;
     }
-    .step-num{
-      width:44px;height:44px;border-radius:50%;
-      background:var(--orange);color:#241700;
-      display:grid;place-items:center;font-weight:900;margin-bottom:18px;
-    }
-    .step h3{font-size:1.2rem;margin-bottom:8px}
-    .step p{color:#c8d8eb}
 
-    /* FAQ */
-    .faq-wrap{max-width:850px;margin:auto}
-    details{
-      border:1px solid var(--border);
-      border-radius:16px;
-      padding:0 20px;
-      margin-bottom:12px;
-      background:#fff;
-    }
-    summary{
-      cursor:pointer;
-      list-style:none;
-      padding:20px 0;
-      font-weight:900;
+    .card h3{
+      margin:0 0 8px;
+      font-size:1.25rem;
       color:var(--navy);
-      display:flex;justify-content:space-between;gap:20px;
     }
-    summary::-webkit-details-marker{display:none}
-    summary::after{content:"+";font-size:1.35rem;color:var(--blue)}
-    details[open] summary::after{content:"–"}
-    details p{color:var(--muted);padding:0 0 20px}
+
+    .card p{
+      margin:0;
+      color:var(--muted);
+    }
+
+    /* SPLIT */
+    .split{
+      display:grid;
+      grid-template-columns:1.05fr .95fr;
+      gap:58px;
+      align-items:center;
+    }
+
+    .photo{
+      overflow:hidden;
+      border-radius:28px;
+      box-shadow:var(--shadow);
+      min-height:470px;
+      background:
+        linear-gradient(180deg,rgba(11,31,58,.03),rgba(11,31,58,.15)),
+        url('https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&w=1200&q=85') center/cover no-repeat;
+    }
+
+    .checklist{
+      display:grid;
+      gap:16px;
+      margin-top:28px;
+    }
+
+    .check{
+      display:flex;
+      gap:13px;
+      align-items:flex-start;
+    }
+
+    .check-badge{
+      flex:0 0 28px;
+      height:28px;
+      border-radius:50%;
+      display:grid;
+      place-items:center;
+      background:#fff3bf;
+      color:#755000;
+      font-weight:900;
+      margin-top:1px;
+    }
+
+    .check strong{
+      display:block;
+      color:var(--navy);
+      margin-bottom:2px;
+    }
+
+    .check span{color:var(--muted)}
+
+    /* BANNER */
+    .banner-wrap{
+      padding-top:0;
+    }
+
+    .banner{
+      border-radius:28px;
+      background:
+        linear-gradient(105deg,rgba(8,27,50,.97),rgba(18,45,80,.94)),
+        url('https://images.unsplash.com/photo-1493238792000-8113da705763?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      color:#fff;
+      padding:58px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:30px;
+      box-shadow:var(--shadow);
+    }
+
+    .banner h2{color:#fff;margin-bottom:10px}
+    .banner p{margin:0;color:#dce5ef}
+    .banner .btn{white-space:nowrap}
 
     /* CONTACT */
     .contact{
-      background:linear-gradient(180deg,#f7faff,#fff);
-    }
-    .contact-box{
-      border-radius:30px;
-      overflow:hidden;
-      display:grid;
-      grid-template-columns:1.05fr .95fr;
-      box-shadow:var(--shadow);
-      border:1px solid var(--border);
-      background:#fff;
-    }
-    .contact-copy{padding:42px}
-    .contact-copy h2{font-size:2.3rem;line-height:1.05;color:var(--navy);letter-spacing:-.035em}
-    .contact-copy>p{color:var(--muted);margin:14px 0 24px}
-    .contact-list{display:grid;gap:14px}
-    .contact-item{
-      display:grid;grid-template-columns:44px 1fr;gap:12px;align-items:center;
-    }
-    .contact-item b{
-      width:44px;height:44px;border-radius:12px;
-      background:var(--sky);display:grid;place-items:center;
-    }
-    .contact-item span{display:block;color:var(--muted);font-size:.9rem}
-    .contact-side{
       background:var(--navy);
       color:#fff;
-      padding:42px;
-      display:flex;
-      flex-direction:column;
-      justify-content:center;
     }
-    .contact-side h3{font-size:1.65rem;margin-bottom:12px}
-    .contact-side p{color:#c8d8eb;margin-bottom:22px}
-    .contact-side .btn{margin-bottom:10px}
-    .btn-white{background:#fff;color:var(--navy)}
-    .btn-outline{border-color:rgba(255,255,255,.22);color:#fff;background:transparent}
 
-    footer{background:#07172b;color:#b8c7d8;padding:32px 0}
-    footer .container{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
-    footer strong{color:#fff}
+    .contact-grid{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:40px;
+      align-items:center;
+    }
 
-    .mobile-bar{display:none}
+    .contact h2{color:#fff}
+    .contact p{color:#d8e1ec;max-width:600px}
+
+    .contact-card{
+      background:#fff;
+      color:var(--ink);
+      padding:28px;
+      border-radius:20px;
+    }
+
+    .contact-card div{
+      padding:14px 0;
+      border-bottom:1px solid var(--line);
+    }
+
+    .contact-card div:last-child{border-bottom:none}
+    .contact-card small{
+      display:block;
+      color:var(--muted);
+      font-weight:700;
+      text-transform:uppercase;
+      letter-spacing:.7px;
+      margin-bottom:4px;
+    }
+    .contact-card strong{
+      color:var(--navy);
+      font-size:1.1rem;
+    }
+
+    footer{
+      background:#071426;
+      color:#b9c5d3;
+      padding:26px 0 86px;
+      font-size:.92rem;
+    }
+
+    .footer-row{
+      display:flex;
+      justify-content:space-between;
+      gap:20px;
+      flex-wrap:wrap;
+    }
+
+    .mobile-call{
+      display:none;
+    }
 
     @media (max-width:900px){
-      .hero-grid,.split,.contact-box{grid-template-columns:1fr}
-      .hero-grid{min-height:auto;padding:60px 0}
-      .hero-card{max-width:620px}
-      .cards,.steps{grid-template-columns:1fr 1fr}
-      .nav-links{
-        display:none;
-        position:absolute;left:18px;right:18px;top:76px;
-        background:#fff;border:1px solid var(--border);
-        border-radius:18px;padding:18px;
-        box-shadow:var(--shadow);
-        flex-direction:column;align-items:stretch;
-      }
-      .nav-links.open{display:flex}
-      .menu-btn{display:block}
+      .nav-links a:not(.nav-cta){display:none}
+      .cards{grid-template-columns:1fr}
+      .split,.contact-grid{grid-template-columns:1fr}
+      .photo{min-height:380px}
+      .banner{padding:38px;display:block}
+      .banner .btn{margin-top:22px}
+      .hero{min-height:700px;background-position:62% center}
     }
 
-    @media (max-width:650px){
+    @media (max-width:640px){
+      .container{width:min(100% - 28px,1120px)}
+      nav{height:66px}
+      .brand{font-size:.92rem}
+      .nav-cta{padding:9px 13px}
+      .hero{padding-top:66px;min-height:720px}
+      .hero-content{padding:74px 0}
+      h1{letter-spacing:-1.8px}
       section{padding:68px 0}
-      .cards,.steps{grid-template-columns:1fr}
-      .topbar .container{justify-content:center;text-align:center}
-      .topbar .location{display:none}
-      .brand-text{font-size:.92rem}
-      .brand small{font-size:.66rem}
-      h1{font-size:3.05rem}
-      .hero p{font-size:1.02rem}
-      .hero-actions .btn{width:100%}
-      .hero-card{padding:24px;border-radius:22px}
-      .feature-panel{min-height:360px}
-      .contact-copy,.contact-side{padding:30px 24px}
-      footer{padding-bottom:92px}
-      .mobile-bar{
+      .banner{padding:30px 24px;border-radius:22px}
+      .photo{min-height:320px}
+      footer{padding-bottom:96px}
+
+      .mobile-call{
+        display:flex;
         position:fixed;
-        display:grid;
-        grid-template-columns:1fr 1fr;
-        gap:8px;
-        z-index:1200;
-        bottom:10px;
-        left:10px;right:10px;
-        background:rgba(255,255,255,.96);
-        backdrop-filter:blur(10px);
-        padding:8px;
-        border-radius:18px;
-        border:1px solid var(--border);
-        box-shadow:0 15px 40px rgba(0,0,0,.18);
-      }
-      .mobile-bar a{
-        text-align:center;
+        left:14px;
+        right:14px;
+        bottom:14px;
+        z-index:90;
+        background:var(--gold);
+        color:#13223a;
+        min-height:56px;
+        border-radius:14px;
+        align-items:center;
+        justify-content:center;
         font-weight:900;
-        border-radius:12px;
-        padding:12px;
+        box-shadow:0 12px 28px rgba(0,0,0,.22);
       }
-      .mobile-call{background:var(--blue);color:#fff}
-      .mobile-text{background:var(--orange);color:#241700}
     }
   </style>
-
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"LocalBusiness",
-    "name":"Vantage Driving Academy",
-    "telephone":"+1-778-929-0062",
-    "address":{
-      "@type":"PostalAddress",
-      "streetAddress":"20211 66 Ave",
-      "addressLocality":"Langley",
-      "addressRegion":"BC",
-      "postalCode":"V2Y 0L4",
-      "addressCountry":"CA"
-    },
-    "areaServed":"Langley, British Columbia"
-  }
-  </script>
 </head>
+
 <body>
-
-  <div class="topbar">
-    <div class="container">
-      <div class="location">📍 20211 66 Ave, Langley, BC</div>
-      <a href="tel:+17789290062">☎ 778-929-0062</a>
-    </div>
-  </div>
-
   <header>
     <div class="container">
       <nav>
-        <a href="#home" class="brand" aria-label="Vantage Driving Academy home">
-          <div class="logo">V</div>
-          <div class="brand-text">
-            Vantage Driving Academy
-            <small>Langley, British Columbia</small>
-          </div>
+        <a class="brand" href="#home">
+          Vantage Driving Academy
+          <small>Langley, BC</small>
         </a>
 
-        <button class="menu-btn" aria-label="Open menu" onclick="toggleMenu()">☰</button>
-
-        <div class="nav-links" id="navLinks">
-          <a href="#lessons" onclick="closeMenu()">Lessons</a>
-          <a href="#why" onclick="closeMenu()">Why Vantage</a>
-          <a href="#faq" onclick="closeMenu()">FAQ</a>
-          <a href="#contact" onclick="closeMenu()">Contact</a>
-          <a class="nav-cta" href="tel:+17789290062">Book a Lesson</a>
+        <div class="nav-links">
+          <a href="#lessons">Lessons</a>
+          <a href="#why">Why Vantage</a>
+          <a href="#contact">Contact</a>
+          <a class="nav-cta" href="tel:+17789290062">Call to Book</a>
         </div>
       </nav>
     </div>
@@ -490,99 +455,66 @@
 
   <main>
     <section class="hero" id="home">
-      <div class="container hero-grid">
-        <div>
+      <div class="container">
+        <div class="hero-content">
           <div class="eyebrow">Professional Driving Lessons • Langley, BC</div>
-          <h1>Drive with confidence. Learn for life.</h1>
+          <h1>Drive With Confidence. Learn For Life.</h1>
           <p>
-            One-on-one driving instruction for new and experienced drivers.
-            Build safe habits, prepare for your BC road test, and feel more confident behind the wheel.
+            Friendly, focused driving instruction for new drivers, road-test preparation
+            and drivers who want to refresh their skills.
           </p>
 
           <div class="hero-actions">
-            <a class="btn btn-primary" href="tel:+17789290062">☎ Call to Book</a>
-            <a class="btn btn-light" href="#lessons">View Lessons</a>
+            <a class="btn btn-primary" href="tel:+17789290062">☎ Book a Lesson</a>
+            <a class="btn btn-secondary" href="#lessons">View Lessons</a>
           </div>
 
           <div class="hero-points">
-            <span>Class 5 &amp; Class 7</span>
-            <span>Road Test Preparation</span>
-            <span>Refresher Lessons</span>
+            <span>✓ One-on-one lessons</span>
+            <span>✓ Langley area</span>
+            <span>✓ Class 5 & Class 7</span>
           </div>
         </div>
-
-        <aside class="hero-card">
-          <div class="road-icon">🚘</div>
-          <h2>Ready for your next driving lesson?</h2>
-          <p>Call or text Vantage Driving Academy to discuss the right lesson for your experience level and goals.</p>
-
-          <div class="quick-row">
-            <strong>Location</strong>
-            <span>Langley, BC</span>
-          </div>
-          <div class="quick-row">
-            <strong>Lessons</strong>
-            <span>Class 5 &amp; 7</span>
-          </div>
-          <div class="quick-row">
-            <strong>Focus</strong>
-            <span>Safe, confident driving</span>
-          </div>
-
-          <a class="btn quick-call" href="tel:+17789290062">Call 778-929-0062</a>
-        </aside>
       </div>
     </section>
 
     <section class="services" id="lessons">
       <div class="container">
         <div class="section-head">
-          <div class="kicker">Driving Lessons</div>
-          <h2 class="section-title">Training built around your driving goals</h2>
-          <p>Whether you are starting from the beginning, preparing for a road test, or getting comfortable behind the wheel again, we can help you focus on the skills that matter.</p>
+          <div class="section-kicker">Driving Lessons</div>
+          <h2>Training built around your experience level.</h2>
+          <p>
+            Whether you are just starting or preparing for your road test,
+            your lesson can focus on the skills you need most.
+          </p>
         </div>
 
         <div class="cards">
           <article class="card">
-            <div class="card-icon">🅻</div>
-            <h3>Beginner / Class 7 Lessons</h3>
-            <p>Build strong fundamentals including observation, steering, intersections, parking, lane changes, and safe decision-making.</p>
-            <a href="tel:+17789290062">Ask about lessons →</a>
+            <div class="icon">🚗</div>
+            <h3>Beginner Lessons</h3>
+            <p>
+              Build strong habits from the start with calm, step-by-step instruction
+              and real-world driving practice.
+            </p>
           </article>
 
           <article class="card">
-            <div class="card-icon">🛣️</div>
+            <div class="icon">🛣️</div>
             <h3>Road Test Preparation</h3>
-            <p>Focused practice to sharpen the skills, awareness, consistency, and confidence you need before your BC road test.</p>
-            <a href="tel:+17789290062">Prepare for your test →</a>
+            <p>
+              Practice the key skills needed for your road test, including intersections,
+              parking, lane changes and observation.
+            </p>
           </article>
 
           <article class="card">
-            <div class="card-icon">✅</div>
-            <h3>Class 5 Lessons</h3>
-            <p>Refine your driving for the full licence stage with practical coaching on safe, smooth, independent driving.</p>
-            <a href="tel:+17789290062">Book Class 5 training →</a>
-          </article>
-
-          <article class="card">
-            <div class="card-icon">🔄</div>
+            <div class="icon">🔄</div>
             <h3>Refresher Lessons</h3>
-            <p>Returning to driving after a break? Rebuild confidence and update your everyday driving habits at a comfortable pace.</p>
-            <a href="tel:+17789290062">Book a refresher →</a>
-          </article>
-
-          <article class="card">
-            <div class="card-icon">🅿️</div>
-            <h3>Parking &amp; Manoeuvres</h3>
-            <p>Practice parking, reversing, positioning, shoulder checks, and low-speed control with clear step-by-step coaching.</p>
-            <a href="tel:+17789290062">Practice with an instructor →</a>
-          </article>
-
-          <article class="card">
-            <div class="card-icon">🚦</div>
-            <h3>Confidence Building</h3>
-            <p>Improve comfort in traffic, at intersections, during lane changes, and in the real situations you face on local roads.</p>
-            <a href="tel:+17789290062">Build confidence →</a>
+            <p>
+              Rebuild confidence, sharpen your driving habits and get comfortable
+              behind the wheel again.
+            </p>
           </article>
         </div>
       </div>
@@ -590,43 +522,45 @@
 
     <section id="why">
       <div class="container split">
-        <div class="feature-panel">
-          <div class="big">🚗</div>
-          <h3>More than passing a test.</h3>
-          <p>The goal is to help you become a safer, calmer and more capable driver for everyday roads — not just test day.</p>
-        </div>
+        <div class="photo" aria-label="Driving lesson"></div>
 
         <div>
-          <div class="kicker">Why Vantage</div>
-          <h2 class="section-title">Clear coaching. Practical skills. More confidence.</h2>
+          <div class="section-kicker">Why Vantage</div>
+          <h2>More confidence behind the wheel.</h2>
+          <p style="color:var(--muted);font-size:1.05rem;margin:0">
+            Lessons are focused, practical and adapted to the driver's current skill level.
+          </p>
 
           <div class="checklist">
             <div class="check">
-              <b>✓</b>
+              <div class="check-badge">✓</div>
               <div>
-                <h3>One-on-one instruction</h3>
-                <p>Focused coaching built around your current skill level and the areas you want to improve.</p>
+                <strong>Patient instruction</strong>
+                <span>Clear guidance without unnecessary pressure.</span>
               </div>
             </div>
+
             <div class="check">
-              <b>✓</b>
+              <div class="check-badge">✓</div>
               <div>
-                <h3>Real-world driving skills</h3>
-                <p>Practice the habits and decisions that make everyday driving safer and smoother.</p>
+                <strong>Local Langley practice</strong>
+                <span>Train in the same kinds of traffic and road conditions you drive every day.</span>
               </div>
             </div>
+
             <div class="check">
-              <b>✓</b>
+              <div class="check-badge">✓</div>
               <div>
-                <h3>Road-test focused practice</h3>
-                <p>Prepare with structured practice and feedback before your Class 5 or Class 7 road test.</p>
+                <strong>Lessons that fit your goals</strong>
+                <span>Focus on beginner skills, test preparation or specific areas you want to improve.</span>
               </div>
             </div>
+
             <div class="check">
-              <b>✓</b>
+              <div class="check-badge">✓</div>
               <div>
-                <h3>Local Langley instruction</h3>
-                <p>Convenient driving instruction based in Langley, British Columbia.</p>
+                <strong>Simple booking</strong>
+                <span>Call directly to ask questions and arrange your lesson.</span>
               </div>
             </div>
           </div>
@@ -634,96 +568,44 @@
       </div>
     </section>
 
-    <section class="process">
+    <section class="banner-wrap">
       <div class="container">
-        <div class="section-head">
-          <div class="kicker" style="color:#ffd36a">Simple Process</div>
-          <h2 class="section-title">Getting started is easy</h2>
-          <p>Tell us where you are in your driving journey and what you want to work on.</p>
-        </div>
-
-        <div class="steps">
-          <div class="step">
-            <div class="step-num">1</div>
-            <h3>Call or text</h3>
-            <p>Contact us at 778-929-0062 and tell us your licence level and driving goals.</p>
+        <div class="banner">
+          <div>
+            <div class="section-kicker" style="color:var(--gold)">Ready to Drive?</div>
+            <h2>Start building confidence today.</h2>
+            <p>Call Vantage Driving Academy to book your next lesson in Langley.</p>
           </div>
-          <div class="step">
-            <div class="step-num">2</div>
-            <h3>Choose your lesson</h3>
-            <p>We’ll help identify the right type of training for your experience and road-test plans.</p>
-          </div>
-          <div class="step">
-            <div class="step-num">3</div>
-            <h3>Build your confidence</h3>
-            <p>Practice with focused instruction and feedback designed to improve safe driving habits.</p>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <section id="faq">
-      <div class="container">
-        <div class="section-head">
-          <div class="kicker">FAQ</div>
-          <h2 class="section-title">Common questions</h2>
-        </div>
-
-        <div class="faq-wrap">
-          <details>
-            <summary>Do you offer lessons for Class 7 drivers?</summary>
-            <p>Yes. Vantage offers driving instruction for Class 7 learners, including beginner skill development and road-test preparation.</p>
-          </details>
-          <details>
-            <summary>Can I book lessons before a road test?</summary>
-            <p>Yes. Road-test preparation can focus on consistency, observation, manoeuvres, traffic situations, and areas where you want extra practice.</p>
-          </details>
-          <details>
-            <summary>Do you offer Class 5 driving lessons?</summary>
-            <p>Yes. Class 5 lessons can help drivers refine their skills and prepare for the full-licence road test.</p>
-          </details>
-          <details>
-            <summary>I already have driving experience. Can I take a refresher lesson?</summary>
-            <p>Yes. Refresher training is useful if you have been away from driving or simply want more confidence and feedback.</p>
-          </details>
-          <details>
-            <summary>How do I book?</summary>
-            <p>Call or text 778-929-0062 to discuss availability and the type of lesson you need.</p>
-          </details>
+          <a class="btn btn-primary" href="tel:+17789290062">☎ 778-929-0062</a>
         </div>
       </div>
     </section>
 
     <section class="contact" id="contact">
-      <div class="container">
-        <div class="contact-box">
-          <div class="contact-copy">
-            <div class="kicker">Contact</div>
-            <h2>Ready to get behind the wheel?</h2>
-            <p>Contact Vantage Driving Academy to ask about lessons, road-test preparation, and availability.</p>
+      <div class="container contact-grid">
+        <div>
+          <div class="section-kicker" style="color:var(--gold)">Contact</div>
+          <h2>Book your driving lesson.</h2>
+          <p>
+            Questions about lessons or road-test preparation? Call Vantage Driving Academy
+            and we can discuss what type of lesson is right for you.
+          </p>
+          <a class="btn btn-primary" href="tel:+17789290062">Call 778-929-0062</a>
+        </div>
 
-            <div class="contact-list">
-              <div class="contact-item">
-                <b>☎</b>
-                <div><span>Phone</span><strong>778-929-0062</strong></div>
-              </div>
-              <div class="contact-item">
-                <b>📍</b>
-                <div><span>Location</span><strong>20211 66 Ave, Langley, BC V2Y 0L4</strong></div>
-              </div>
-              <div class="contact-item">
-                <b>🚘</b>
-                <div><span>Services</span><strong>Class 5 &amp; 7 • Road Test Prep • Refresher Lessons</strong></div>
-              </div>
-            </div>
+        <div class="contact-card">
+          <div>
+            <small>Phone</small>
+            <strong><a href="tel:+17789290062">778-929-0062</a></strong>
           </div>
-
-          <div class="contact-side">
-            <h3>Book your lesson</h3>
-            <p>The fastest way to get started is to call or text us directly.</p>
-            <a class="btn btn-white" href="tel:+17789290062">☎ Call 778-929-0062</a>
-            <a class="btn btn-outline" href="sms:+17789290062">💬 Send a Text</a>
-            <a class="btn btn-outline" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=20211+66+Ave+Langley+BC+V2Y+0L4">📍 Get Directions</a>
+          <div>
+            <small>Service Area</small>
+            <strong>Langley, British Columbia</strong>
+          </div>
+          <div>
+            <small>Lessons</small>
+            <strong>Class 5 & Class 7</strong>
           </div>
         </div>
       </div>
@@ -731,22 +613,10 @@
   </main>
 
   <footer>
-    <div class="container">
-      <div><strong>Vantage Driving Academy</strong><br>Professional driving lessons in Langley, BC.</div>
-      <div>© <span id="year"></span> Vantage Driving Academy. All rights reserved.</div>
+    <div class="container footer-row">
+      <span>© 2026 Vantage Driving Academy. All rights reserved.</span>
+      <span>Professional Driving Lessons • Langley, BC</span>
     </div>
   </footer>
 
-  <div class="mobile-bar">
-    <a class="mobile-call" href="tel:+17789290062">☎ Call</a>
-    <a class="mobile-text" href="sms:+17789290062">💬 Text</a>
-  </div>
-
-  <script>
-    function toggleMenu(){
-      document.getElementById('navLinks').classList.toggle('open');
-    }
-    function closeMenu(){
-      document.getElementById('navLinks').classList.remove('open');
-    }
-    document.getElementById('year').textContent = new Date().getFullYear();
+  <a class="mobile-call" href="tel:+17789290062">☎ Call to Book • 778-929-0062</a>
