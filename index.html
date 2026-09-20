@@ -6,6 +6,36 @@
   <meta name="description" content="Vantage Drive Solutions Ltd offers professional Class 5 and Class 7 driving lessons in Langley, BC." />
   <title>Vantage Drive Solutions Ltd | Langley, BC</title>
 
+  <!-- Prevent mobile browsers from reopening the page at an old scroll position. -->
+  <script>
+    (function () {
+      if ("scrollRestoration" in history) {
+        history.scrollRestoration = "manual";
+      }
+
+      // Always open a fresh page view at the top, even if Safari/Chrome
+      // remembered a previous anchor such as #contact or #reviews.
+      if (window.location.hash) {
+        history.replaceState(null, "", window.location.pathname + window.location.search);
+      }
+
+      function resetToTop() {
+        var root = document.documentElement;
+        var previousBehavior = root.style.scrollBehavior;
+        root.style.scrollBehavior = "auto";
+        window.scrollTo(0, 0);
+        root.style.scrollBehavior = previousBehavior;
+      }
+
+      resetToTop();
+      window.addEventListener("pageshow", function () {
+        resetToTop();
+        requestAnimationFrame(resetToTop);
+        setTimeout(resetToTop, 60);
+      });
+    })();
+  </script>
+
   <style>
     :root{
       --navy:#0b1f3a;
@@ -908,3 +938,5 @@
   </footer>
 
   <a class="mobile-call" href="tel:+17789290062">☎ Call to Book • 778-929-0062</a>
+</body>
+</html>
